@@ -1,13 +1,23 @@
 import angular from 'angular';
 import ngMaterial from 'angular-material';
-import Users from './src/components/users/users.js';
+import 'angular-component';
+import uirouter from 'angular-ui-router';
+
+import Home from './src/components/home/home';
+import Users from './src/components/users/users';
 
 import './assets/app.css';
 import 'angular-material/angular-material.css';
 
-angular.module('app', [Users, ngMaterial])
-  .config(function($mdThemingProvider, $mdIconProvider){
-
+angular.module('app', [
+    uirouter,
+    ngMaterial,
+    Home,
+    Users
+  ])
+  .config(function($urlRouterProvider, $mdThemingProvider, $mdIconProvider){
+    $urlRouterProvider.otherwise('/');
+    
     $mdIconProvider
       .defaultIconSet("./assets/svg/avatars.svg", 128)
       .icon("menu"       , "./assets/svg/menu.svg"        , 24)

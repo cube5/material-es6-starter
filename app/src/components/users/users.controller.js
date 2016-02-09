@@ -10,6 +10,7 @@
 export default class UserController {
   constructor( userService, $mdSidenav, $mdBottomSheet, $log, $scope) {
     var self = this;
+    console.log('UsersController')
   
     self.selected     = null;
     self.users        = [ ];

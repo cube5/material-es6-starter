@@ -30,10 +30,15 @@ module.exports = function (config) {
     //singleRun : false,
 
     frameworks: ['jasmine'],
-    browsers: ['Chrome'],
+    browsers: ['Firefox', 'PhantomJS', 'FirefoxAurora'],
 
     plugins: [
       'karma-chrome-launcher',
+      'karma-firefox-launcher',
+      'karma-ie-launcher',
+      'karma-safari-launcher',
+      'karma-opera-launcher',
+      'karma-phantomjs-launcher',
       'karma-jasmine'
     ]
 
